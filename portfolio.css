@@ -130,8 +130,8 @@ body {
     padding-top: 40px;
 }
 
-.featured-work-section h3 {
-    font-size: 1.4rem;
+.featured-work-section h2 {
+    /* font-size: 1.4rem; */
     font-weight: 600;
     margin-bottom: 32px;
     color: var(--ink-black);
@@ -164,8 +164,8 @@ body {
     box-shadow: 0 12px 24px rgba(17, 24, 39, 0.06);
 }
 
-.project-card h4 {
-    font-size: 18px;
+.project-card h3 {
+    /* font-size: 18px; */
     font-weight: 600;
     color: var(--ink-black);
     line-height: 1.4;
