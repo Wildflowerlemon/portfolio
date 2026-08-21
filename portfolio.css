@@ -82,7 +82,7 @@ body {
     /* border: red 1px solid; */
 }
 
-.hero h1 {
+.hero h1, h1 {
     /* font-size: 3.5rem; */
     font-size: 2.8rem;
     font-weight: 700;
@@ -90,7 +90,6 @@ body {
     margin-bottom: 12px;
     color: var(--ink-black);
     /* border: purple 1px solid; */
-
 }
 
 .hero h2 {
@@ -102,7 +101,7 @@ body {
     /* border: blue 1px solid; */
 }
 
-.hero p {
+.hero p, p {
     font-size: 1rem;
     color: var(--slate-gray);
     line-height: 1.6;
@@ -251,31 +250,55 @@ footer {
 }
 
 
-/* fast food page */
+/* Fast Food Page */
 
 .project-container {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 40px auto 120px auto;
     padding: 0 20px;
 }
 
 .project-hero {
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
+    padding: 80px 0;
+    max-width: 650px;
 }
 
-.image-wrapper {
+/* handles the 3-column grid container layout */
+.poster-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat( 3, 1fr);
+    gap: 20px;
     margin: 30px 0;
     width: 100%;
 }
 
-.image-wrapper img {
+.poster-grid img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     display: block;
 }
+
+.poster-grid.sketch-grid img {
+    height: 380px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.fast-food-mockups {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+
+.fast-food-mockups img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+}
+
 
 
