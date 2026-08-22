@@ -250,6 +250,7 @@ footer {
 }
 
 
+
 /* Fast Food Page */
 
 .project-container {
@@ -259,7 +260,6 @@ footer {
 }
 
 .project-hero {
-    /* margin-bottom: 40px; */
     padding: 80px 0;
     max-width: 650px;
 }
@@ -286,18 +286,53 @@ footer {
     object-position: top;
 }
 
-.fast-food-mockups {
+.mockups {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 80px;
 }
 
-.fast-food-mockups img {
+.mockups img {
     width: 100%;
     height: auto;
     display: block;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 6px;
+}
+
+.mockups h2 {
+    margin-bottom: 30px;
+}
+
+.project-container section {
+    margin-bottom: 80px;
+}
+
+.poster-grid.moodboard-grid {
+    display: block;
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.poster-grid.moodboard-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    margin-bottom: 20px;
+    break-inside: avoid;
+}
+
+
+/*------- Small screen -------*/
+@media (max-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+    .poster-grid.moodboard-grid {
+        column-count: 1;
+    }
+
+    .poster-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
