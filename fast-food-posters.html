@@ -12,12 +12,17 @@
     <!-- Page Nav -->
     <header class="navbar">
         <div class="logo"><a href="index.html">Madison Lamb</a></div>
-        <nav class="nav">
+        <nav class="nav-drawer">
             <a href="work.html">Work</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
             <a href="Madison-Lamb-Resume.pdf" target="_blank" rel="noopener noreferrer"class="resume-btn">Resume</a>
         </nav>
+        <button class="menu-toggle" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
     
     <!-- Main Content -->
@@ -101,6 +106,34 @@
 
         <p class="copyright">&copy; 2026 Madison Lamb</p>
     </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+        });
+        window.addEventListener('click', (e) => {
+            if (mobileNav.contains(e.target)) {
+                return;
+            }
+
+            if (mobileNav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
+        })
+        });
+    </script>
 
 </body>
 </html>
