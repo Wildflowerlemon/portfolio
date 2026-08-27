@@ -104,5 +104,33 @@
         <p class="copyright">&copy; 2026 Madison Lamb</p>
     </footer>
 
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('nav-drawer');
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav-drawer a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+        });
+        window.addEventListener('click', (e) => {
+            if (mobileNav.contains(e.target)) {
+                return;
+            }
+
+            if (mobileNav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
+        })
+        });
+    </script>
+
 </body>
 </html>
