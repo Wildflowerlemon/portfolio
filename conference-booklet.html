@@ -114,22 +114,28 @@
             mobileNav.classList.toggle('active');
         });
 
-        document.querySelectorAll('nav-drawer a').forEach(link => {
+        document.querySelectorAll('.nav-drawer a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
                 mobileNav.classList.remove('active');
         });
-        window.addEventListener('click', (e) => {
-            if (mobileNav.contains(e.target)) {
+
+        function closeMenuIfOutside(e) {
+            if (!mobileNav.classList.contains('active'))
+                return;
+        }
+
+            if (mobileNav.contains(e.target) || menuToggle.contains(e.target)) {
                 return;
             }
 
-            if (mobileNav.classList.contains('active')) {
-                menuToggle.classList.remove('active');
-                mobileNav.classList.remove('active');
-            }
-        })
+        menuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        
         });
+
+        window.addEventListener('click', closeMenuIfOutside);
+        window.addEventListener('touchstart', closeMenuIfOutside);
     </script>
 
 </body>
