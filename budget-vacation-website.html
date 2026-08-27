@@ -12,6 +12,7 @@
     <!-- Page Nav -->
     <header class="navbar">
         <div class="logo"><a href="index.html">Madison Lamb</a></div>
+        <div class="menu-overlay"></div>
         <nav class="nav-drawer">
             <a href="work.html">Work</a>
             <a href="#about">About</a>
@@ -107,35 +108,35 @@
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const mobileNav = document.querySelector('.nav-drawer');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const bodyElement = document.body;
 
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
+        function toggleMenu() {
             menuToggle.classList.toggle('active');
             mobileNav.classList.toggle('active');
-        });
+            menuOverlay.classList.toggle('active');
 
-        document.querySelectorAll('.nav-drawer a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mobileNav.classList.remove('active');
-        });
-
-        function closeMenuIfOutside(e) {
-            if (!mobileNav.classList.contains('active'))
-                return;
+            // Adds scroll-lock class if menu opens, removes it if menu closes
+            bodyElement.classList.toggle('no-scroll');
         }
 
-            if (mobileNav.contains(e.target) || menuToggle.contains(e.target)) {
-                return;
-            }
+        function closeMenu() {
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            menuOverlay.classList.remove('active');
 
-        menuToggle.classList.remove('active');
-        mobileNav.classList.remove('active');
-        
+            //Instantly unlocks normal background page scrolling
+            bodyElement.classList.toggle('no-scroll');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('touchstart', closeMenu,{passive: true});
+
+        document.querySelectorAll('.nav-drawer a'). forEach(link => {
+            link.addEventListener('click', closeMenu);
+       
         });
-
-        window.addEventListener('click', closeMenuIfOutside);
-        window.addEventListener('touchstart', closeMenuIfOutside);
     </script>
 
 </body>

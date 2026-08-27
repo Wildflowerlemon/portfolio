@@ -24,6 +24,12 @@ body {
     padding: 0 80px;
 }
 
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    touch-action: none;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -325,6 +331,25 @@ footer {
 @media (max-width: 768px) {
     body {
         padding: 20px;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        z-index: 98;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        touch-action: none;
     }
 
     .navbar {
