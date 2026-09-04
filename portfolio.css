@@ -289,7 +289,7 @@ footer {
 
 .poster-grid.sketch-grid img {
     height: 380px;
-    object-fit: cover;
+    /* object-fit: cover; */
     object-position: top;
 }
 
