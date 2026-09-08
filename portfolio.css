@@ -327,8 +327,26 @@ footer {
     break-inside: avoid;
 }
 
-/* Vacation Page*/
+/* Vacation Page */
 
+.typography-showcase {
+    background-color: #fdfdfd;
+    margin-bottom: 25px;
+}
+
+.font-preview-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #27333c;
+    margin: 5px 0;
+}
+
+.font-preview-body {
+    font-size: 16px;
+    color: #27333c;
+}
+
+/* Vacation Page Color Scheme */
 .color-palette {
     display: flex;
     flex-wrap: wrap;
