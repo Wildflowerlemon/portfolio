@@ -410,6 +410,7 @@ footer {
 }
 
 /*------- Booklet Page -------*/
+
 .type-color-section {
     width: 100%;
     padding: 60px 0;
@@ -566,3 +567,52 @@ footer {
         margin-bottom: 120px;
     }
 }
+
+/*------- Desktop screen -------*/
+@media (min-width: 769px) {
+    .booklet-page h2 {
+    margin-bottom: 30px;
+}
+
+.booklet-page .poster-grid.moodboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-count: unset;
+    gap: 20px;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    grid-template-areas: 
+    "pillar1 pillar2 topRight"
+    "pillar1 pillar2 bottomRight"
+    "banner banner banner";
+}
+
+.booklet-page .poster-grid.moodboard-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.booklet-page .poster-grid.moodboard-grid img:nth-child(1) {
+    grid-area: pillar1;
+}
+
+.booklet-page .poster-grid.moodboard-grid img:nth-child(2) {
+    grid-area: pillar2;
+}
+
+.booklet-page .poster-grid.moodboard-grid img:nth-child(3) {
+    grid-area: topRight;
+}
+
+.booklet-page .poster-grid.moodboard-grid img:nth-child(4) {
+    grid-area: bottomRight;
+}
+
+.booklet-page .poster-grid.moodboard-grid img:nth-child(5) {
+    grid-area: banner;
+    height: 350px;
+}
+
+    }
