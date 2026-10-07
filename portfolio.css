@@ -449,9 +449,16 @@ footer {
     width: 100%;
     height: auto;
     margin-bottom: 50px;
+
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
 }
 
-.final-designs-section .poster-grid image:last-child {
+.final-designs-section .poster-grid img:first-child {
+    margin-top: 30px;
+}
+
+.final-designs-section .poster-grid img:last-child {
     margin-bottom: 0;
 }
 
