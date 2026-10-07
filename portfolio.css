@@ -409,7 +409,7 @@ footer {
     color: var(--slate-gray);
 }
 
-/*------- Vacation Page -------*/
+/*------- Booklet Page -------*/
 .type-color-section {
     width: 100%;
     padding: 60px 0;
@@ -436,6 +436,24 @@ footer {
     image-rendering: -webkit-optimize-contrast;
 }
 
+.final-designs-section .poster-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.final-designs-section .poster-grid img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.final-designs-section .poster-grid image:last-child {
+    margin-bottom: 0;
+}
 
 /*------- Small screen -------*/
 @media (max-width: 768px) {
